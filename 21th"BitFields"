@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+
+struct pageOfDigits {
+// Space of the digit 'a' in bit fields
+    int a : 8;//this is a digit, no highest then 3 bits
+
+// Space of the digit 'b' in bit fields
+    int b : 9;//this is a digit, no highest then 4 bits
+
+    // if 'a' and 'b' is no highest than 32 bits, together they size are 4 bytes.
+
+    int c; //this is a digit, no highest then 4 bytes
+};
+
+int main()
+{
+    printf("Size of pageOfDigits is %lu bytes\n", sizeof(struct pageOfDigits));
+
+    //'c' is just int and have 4 bytes 'a and b' is nolonger than 32 bit(bytes).
+    return 0;
+}
